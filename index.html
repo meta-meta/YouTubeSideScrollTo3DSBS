@@ -6,6 +6,7 @@
                 position: absolute;
                 top: 0;
                 left: 0;
+                width: 50%;
                 height:100%;
             }
 
@@ -34,6 +35,16 @@
             var firstScriptTag = document.getElementsByTagName('script')[0];
             firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
+            function getParameterByName(name, url) {
+                if (!url) url = window.location.href;
+                name = name.replace(/[\[\]]/g, "\\$&");
+                var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                        results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, " "));
+            }
+
             // 3. This function creates an <iframe> (and YouTube player)
             //    after the API code downloads.
             var players = [];
@@ -51,7 +62,7 @@
                             modestbranding: 1,
                             rel: 0 // show related videos when playback of the initial video ends?
                         },
-                        videoId: i == 0 ? 'mLhFIwkbtJI' : '',
+                        videoId: getParameterByName('vid'),
                         events: {
                             'onReady': onPlayerReady,
                             'onStateChange': onPlayerStateChange.bind(null, i)
@@ -59,21 +70,34 @@
                     });
                     $players[i] = $('#player' + i);
                 }
+
+                $players[getParameterByName('scroll') == 'right' ? 1 : 0].css('left', '50%');
+
             }
 
             var vidIdx = 0;
             var vids = ['KPyQ8xSdDn8', 'mZYHdDNXo_E', 'vqpXSS_SEN8', 'Ib2Vl7JEjfc'];
 
             function next() {
+                var playVid = function() {
+                    players[currPlayer].playVideo();
+                    console.log('currPlayer', currPlayer);
+
+                };
+
                 var bufferPlayer = Number(!currPlayer);
                 $players[bufferPlayer].css('z-index', 0);
 
-                players[currPlayer].playVideo();
+                playVid();
+
+
                 $players[currPlayer].css('z-index', 1); // delay long enough so we don't see play button
 
-                players[bufferPlayer].loadVideoById(vids[vidIdx++]);
+//                players[bufferPlayer].loadVideoById(vids[vidIdx++]);
 
                 currPlayer = bufferPlayer;
+                var del = parseInt(getParameterByName('delay'));
+                setTimeout(playVid, del);
             }
 
             var playersReady = 0;
@@ -95,7 +119,7 @@
                     next();
                 } else {
                     if(event.data === YT.PlayerState.PLAYING&& playerIndex === currPlayer) { // at this point currPlayer is actually the next player
-                        players[playerIndex].pauseVideo();
+//                        players[playerIndex].pauseVideo();
                     }
                 }
             }
