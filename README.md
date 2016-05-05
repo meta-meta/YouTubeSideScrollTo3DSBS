@@ -2,7 +2,7 @@
 turns any reasonably steady side-scrolling youtube video into a SBS 3D for viewing with Cardboard viewer
 
 
-demo [here](http://meta-meta.github.io/YouTubeSideScrollTo3DSBS?vid=g3M40mu3xkY&delay=5000&scroll=left)
+demo [here](http://meta-meta.github.io/YouTubeSideScrollTo3DSBS/?vid=g3M40mu3xkY&delay=5000&scroll=left)
 
 replace `g3M40mu3xkY` with your YouTube video id
 
