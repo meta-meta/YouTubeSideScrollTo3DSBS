@@ -16,6 +16,10 @@ replace `5000` with the delay in milliseconds between videos (this is proportion
 
 replace `left` with `right` if your video scrolls right
 
+## My friend Tim's drone videos:
+
+[http://meta-meta.github.io/YouTubeSideScrollTo3DSBS/?vid=cU4XCrELR7A&delay=2&scroll=right] (http://meta-meta.github.io/YouTubeSideScrollTo3DSBS/?vid=cU4XCrELR7A&delay=2&scroll=right) 
+
 
 ## Some videos I recorded during a flight between SFO and MSP:
 
