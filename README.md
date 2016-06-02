@@ -18,8 +18,10 @@ replace `left` with `right` if your video scrolls right
 
 ## My friend Tim's drone videos:
 
-[http://meta-meta.github.io/YouTubeSideScrollTo3DSBS/?vid=cU4XCrELR7A&delay=2&scroll=right] (http://meta-meta.github.io/YouTubeSideScrollTo3DSBS/?vid=cU4XCrELR7A&delay=2&scroll=right) 
+[http://meta-meta.github.io/YouTubeSideScrollTo3DSBS/?vid=cU4XCrELR7A&delay=2&scroll=right](http://meta-meta.github.io/YouTubeSideScrollTo3DSBS/?vid=cU4XCrELR7A&delay=2&scroll=right) 
 
+## EWR to MSP
+[http://meta-meta.github.io/YouTubeSideScrollTo3DSBS/?vid=YTEUz2MonX8&delay=600&scroll=left](http://meta-meta.github.io/YouTubeSideScrollTo3DSBS/?vid=YTEUz2MonX8&delay=600&scroll=left)
 
 ## Some videos I recorded during a flight between SFO and MSP:
 
